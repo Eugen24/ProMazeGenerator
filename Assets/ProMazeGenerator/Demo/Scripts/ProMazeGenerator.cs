@@ -14,7 +14,7 @@ public class ProMazeGenerator : MonoBehaviour
 	private float wallLength = 1.0f;
 	private Vector3 startPosition;
 	private int currentCell = 0;
-	public Cell[] cells;
+	private Cell[] cells;
 	private int totalCells;
 	private int currentNeighbour = 0;
 	private int backingUp = 0;
