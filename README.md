@@ -1,4 +1,5 @@
 #### Unity ProMazeGenerator v0.1
+- Download Latest Release(.unitypackage) Here: https://github.com/Eugen24/ProMazeGenerator/releases
 - Generates a random perfect maze with given width and height data using "Recursive backtracker" algorithm each time.
 
 #### What is Recursive-backtracker Algorithm?
