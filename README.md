@@ -2,7 +2,7 @@
 - Generates a random perfect maze with given width and height data using "Recursive backtracker" algorithm each time.
 
 #### What is Recursive-backtracker Algorithm?
-## The depth-first search algorithm of maze generation is frequently implemented using backtracking what:
+The depth-first search algorithm of maze generation is frequently implemented using backtracking what:
 - Make the initial cell the current cell and mark it as visited.
 - While there are unvisited cells.
 - If the current cell has any neighbours which have not been visited.
