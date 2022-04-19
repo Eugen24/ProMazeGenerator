@@ -1,6 +1,18 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using System;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public class Cell
+{
+	public bool visited;
+	public GameObject north; //1
+	public GameObject east; //2
+	public GameObject west; //3
+	public GameObject south; //4
+}
 
 public class ProMazeGenerator : MonoBehaviour
 {
@@ -138,7 +150,7 @@ public class ProMazeGenerator : MonoBehaviour
 	/// <summary>
 	/// Getting a random neighbour if not visited and wall between them
 	/// </summary>
-	void GiveMeNeighbour()
+	private void GiveMeNeighbour()
 	{
 		int length = 0;
 		int[] neighbour = new int[4];
@@ -148,6 +160,7 @@ public class ProMazeGenerator : MonoBehaviour
 		check -=1;
 		check *= column;
 		check += column;
+
 		//north
 		if (currentCell + column < totalCells)
 		{
@@ -158,6 +171,7 @@ public class ProMazeGenerator : MonoBehaviour
 				length++;
 			}
 		}
+
 		//east
 		if (currentCell + 1 < totalCells && (currentCell + 1) != check)
 		{
@@ -168,6 +182,7 @@ public class ProMazeGenerator : MonoBehaviour
 				length++;
 			}
 		}
+
 		//west
 		if (currentCell - 1 >= 0 && currentCell != check)
 		{
@@ -178,6 +193,7 @@ public class ProMazeGenerator : MonoBehaviour
 				length++;
 			}
 		}
+
 		//south
 		if (currentCell - column >=  0)
 		{
@@ -202,8 +218,8 @@ public class ProMazeGenerator : MonoBehaviour
 			backingUp--;
 		}
 	}
-	
-	void CreateMaze()
+
+	private void CreateMaze()
 	{
 		bool startedBuilding = false;
 		int visitedCells = 0;
@@ -234,7 +250,7 @@ public class ProMazeGenerator : MonoBehaviour
 		}
 	}
 
-	void DestroyWall(int neighbour)
+	private void DestroyWall(int neighbour)
 	{
 		switch (neighbour)
 		{
@@ -263,17 +279,3 @@ public class ProMazeGenerator : MonoBehaviour
 		}
 	}
 }
-
-[System.Serializable]
-public class Cell {
-	public bool visited;
-	public GameObject north;//1
-	public GameObject east;//2
-	public GameObject west;//3
-	public GameObject south;//4
-}
-
-
-
-
-
